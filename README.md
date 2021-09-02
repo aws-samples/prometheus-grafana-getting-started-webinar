@@ -1,4 +1,4 @@
-# Demo walk through
+# Amazon managed service for Prometheus and Grafana getting started
 
 This repository is a walk through of scripts that were made to quickly setup [Amazon managed service for Prometheus](https://aws.amazon.com/prometheus/) (AMP) and [Amazon managed service for Grafana](https://aws.amazon.com/grafana/) (AMG) in order to write metrics from an EKS cluster to AMP, and to access and query it from AMG.
 

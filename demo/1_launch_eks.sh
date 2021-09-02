@@ -20,15 +20,14 @@ eksctl create cluster --name ${cluster_name} \
 
 # In order to run Graviton 2 instances we need to make sure we are up to date with aws-node, coredns, kube-proxy
 echo "Upgrading cluster components"
-eksctl utils update-aws-node --cluster amp-demo-1 --approve
-eksctl utils update-coredns --cluster amp-demo-1 --approve
-eksctl utils update-kube-proxy --cluster amp-demo-1 --approve
+eksctl utils update-aws-node --cluster ${cluster_name} --approve
+eksctl utils update-coredns --cluster ${cluster_name} --approve
+eksctl utils update-kube-proxy --cluster ${cluster_name} --approve
 
 echo "Launching node group"
 eksctl create nodegroup --name spot-group \
     --ssh-access \
     --ssh-public-key ${ssh_key} \
-    --enable-ssm \
     --node-type  ${spot_type} \
     --managed \
     --spot \

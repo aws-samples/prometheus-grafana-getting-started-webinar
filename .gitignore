@@ -16,5 +16,8 @@ ppt/
 # Local History for Visual Studio Code
 .history/
 
+# Demo
 # AWS Permissions
 demo/*.json
+# BAK
+demo/*.BAK

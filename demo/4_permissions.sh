@@ -10,10 +10,10 @@ OIDC_PROVIDER=$(aws eks describe-cluster --name $CLUSTER_NAME --query "cluster.i
 PROM_SERVICE_ACCOUNT_NAMESPACE=amp
 GRAFANA_SERVICE_ACCOUNT_NAMESPACE=grafana
 SERVICE_ACCOUNT_NAME=iamproxy-service-account
-SERVICE_ACCOUNT_IAM_ROLE=amp-iamproxy-ingest-role
+SERVICE_ACCOUNT_IAM_ROLE=amp-iamproxy-role
 SERVICE_ACCOUNT_IAM_ROLE_DESCRIPTION="IAM role to be used by a K8s service account with write access to AMP"
-SERVICE_ACCOUNT_IAM_POLICY=AMPIngestPolicy
-SERVICE_ACCOUNT_IAM_POLICY_ARN=arn:aws:iam::${AWS_ACCOUNT_ID}:policy/AMPIngestPolicy
+SERVICE_ACCOUNT_IAM_POLICY=AMPPolicy
+SERVICE_ACCOUNT_IAM_POLICY_ARN=arn:aws:iam::${AWS_ACCOUNT_ID}:policy/AMPPolicy
 #
 # Setup a trust policy designed for a specific combination of K8s service account and namespace to sign in from a Kubernetes cluster which hosts the OIDC Idp.
 # If the IAM role already exists, then add this new trust policy to the existing trust policy

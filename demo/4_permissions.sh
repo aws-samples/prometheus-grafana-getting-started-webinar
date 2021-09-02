@@ -90,7 +90,7 @@ SERVICE_ACCOUNT_IAM_POLICY_ID=$(aws iam get-policy --policy-arn $SERVICE_ACCOUNT
 if [ "$SERVICE_ACCOUNT_IAM_POLICY_ID" = "" ]; 
 then
   echo "Creating a new permission policy $SERVICE_ACCOUNT_IAM_POLICY"
-  aws iam create-policy --policy-name $SERVICE_ACCOUNT_IAM_POLICY --policy-document file://PermissionPolicy.json 
+  aws iam create-policy --policy-name $SERVICE_ACCOUNT_IAM_POLICY --policy-document file://PermissionPolicy.json --no-cli-pager
 else
   echo "Permission policy $SERVICE_ACCOUNT_IAM_POLICY already exists"
 fi

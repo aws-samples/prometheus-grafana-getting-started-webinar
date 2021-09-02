@@ -34,3 +34,6 @@ eksctl create nodegroup --name spot-group \
     --nodes-min 3 \
     --nodes-max 5 \
     --cluster ${cluster_name}
+
+echo "Updating kube config with new cluster"
+aws eks update-kubeconfig --name ${cluster_name} --region ${region}

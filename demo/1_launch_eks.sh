@@ -25,7 +25,7 @@ eksctl utils update-kube-proxy --cluster ${cluster_name} --approve
 
 echo "Launching node group"
 eksctl create nodegroup --name spot-group \
-    --node-type  ${spot_type} \
+    --node-type ${spot_type} \
     --managed \
     --spot \
     --nodes-min 3 \

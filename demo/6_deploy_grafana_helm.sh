@@ -7,6 +7,9 @@ set -e
 AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query "Account" --output text)
 sed -i'.BAK' "s|ACCOUNT_ID|$AWS_ACCOUNT_ID|" ./grafana_values.yaml
 
+# Make sure that value file is accessible in the dir
+cd `git rev-parse --show-toplevel`/demo
+
 # Add Grafana Repo to helm
 helm repo add grafana https://grafana.github.io/helm-charts
 

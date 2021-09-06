@@ -6,7 +6,6 @@ set -e
 
 cluster_name='amp-demo'
 region="${AWS_REGION:=eu-west-1}"
-ssh_key="${SSH_KEY:=eu-west-1-default}"
 spot_type="${NODE_SIZE:=m6g.medium}"
 account_id=$(aws sts get-caller-identity --query "Account" --output text)
 
@@ -26,8 +25,6 @@ eksctl utils update-kube-proxy --cluster ${cluster_name} --approve
 
 echo "Launching node group"
 eksctl create nodegroup --name spot-group \
-    --ssh-access \
-    --ssh-public-key ${ssh_key} \
     --node-type  ${spot_type} \
     --managed \
     --spot \

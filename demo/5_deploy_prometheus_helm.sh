@@ -11,6 +11,9 @@ AMP_ALIAS=demo-workspace
 WORKSPACE_ID=$(aws amp list-workspaces --alias $AMP_ALIAS --query "workspaces[].workspaceId" --region eu-west-1 --output text --no-cli-pager)
 NS=amp
 
+# Make sure that value file is accessible in the dir
+cd `git rev-parse --show-toplevel`/demo
+
 # Add Prometheus community repository
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 

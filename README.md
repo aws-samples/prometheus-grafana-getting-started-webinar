@@ -13,6 +13,8 @@ There are 2 options for querying Prometheus data:
 
 ## Requirements
 
+This demo is configured to run in `eu-west-1`, If you need to run it in a different region, edit the AWS_REGION variable in all the scripts
+
 1. awscli => 2.2.25
 2. eksctl => 0.59
 3. helm => v3.6.3
